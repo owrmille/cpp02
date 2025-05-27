@@ -4,6 +4,16 @@ Fixed::Fixed() : value(0) {
     std::cout << "Default constructor called" << std::endl;
 }
 
+Fixed::Fixed(const int value) {
+    std::cout << "Int constructor called" << std::endl;
+    // TODO: finish this
+}
+
+Fixed::Fixed(const float value) {
+    std::cout << "Float constructor called" << std::endl;
+    // TODO: finish this
+}
+
 Fixed::Fixed(const Fixed& other) {
     std::cout << "Copy constructor called" << std::endl;
     value = other.getRawBits();
