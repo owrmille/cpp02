@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iatopchu <iatopchu@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/28 17:14:19 by iatopchu          #+#    #+#             */
+/*   Updated: 2025/05/28 17:18:36 by iatopchu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
@@ -20,6 +32,7 @@ public:
     void setRawBits(int const raw);
     float toFloat(void) const;
     int toInt(void) const;
+
     bool operator>(const Fixed& other) const;
     bool operator<(const Fixed& other) const;
     bool operator>=(const Fixed& other) const;
