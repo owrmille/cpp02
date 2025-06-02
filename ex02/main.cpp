@@ -6,16 +6,43 @@
 /*   By: iatopchu <iatopchu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:14:23 by iatopchu          #+#    #+#             */
-/*   Updated: 2025/05/28 17:14:24 by iatopchu         ###   ########.fr       */
+/*   Updated: 2025/06/02 14:24:38 by iatopchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+void printLine() {
+    std::cout << "--------------------------------" << std::endl;
+}
+
+void printDoubleLine() {
+    std::cout << "=================================" << std::endl;
+}
+
+void printTestTitle(const std::string& title) {
+    printDoubleLine();
+    std::cout << YELLOW << title << RESET << std::endl;
+    printDoubleLine();
+}
+
+void printSectionTitle(const std::string& section) {
+	printLine();
+	std::cout << CYAN << section << RESET << std::endl;
+}
+
+std::string returnWordForBool(bool val) {
+	if (val == true) {
+		return "True";
+	} else if (val == false) {
+		return "False";
+	} else {
+		return "Unknown";
+	}
+}
+
 int main(void) {
-    std::cout << "---------------------------------" << std::endl;
-    std::cout << "-----Tests from the subject------" << std::endl;
-    std::cout << "---------------------------------" << std::endl;
+	printTestTitle("Tests from the subject");
 
     Fixed a;
     Fixed const b(Fixed( 5.05f ) * Fixed( 2 ));
@@ -28,45 +55,43 @@ int main(void) {
     std::cout << b << std::endl;
     std::cout << Fixed::max(a, b) << std::endl;
 
-    std::cout << "                                 " << std::endl;
-    std::cout << "---------------------------------" << std::endl;
-    std::cout << "------------My tests-------------" << std::endl;
-    std::cout << "---------------------------------" << std::endl;
-    std::cout << "                                 " << std::endl;
+	printTestTitle("My tests");
     
     Fixed c(1.5f);
     Fixed d(2);
     Fixed e(2);
-    std::cout << "-------------Values-------------" << std::endl;
+	
+	printSectionTitle("Values");
     std::cout << "c = " << c << std::endl;
     std::cout << "d = " << d << std::endl;
-    std::cout << "-------------Operations---------" << std::endl;
+	printSectionTitle("Operations");
     std::cout << "c + d = " << c + d << std::endl;
     std::cout << "c - d = " << c - d << std::endl;
     std::cout << "c * d = " << c * d << std::endl;
     std::cout << "c / d = " << c / d << std::endl;
 
-    std::cout << "-------------Values-------------" << std::endl;
+	
+	printSectionTitle("Values");
     std::cout << "c = " << c << std::endl;
     std::cout << "d = " << d << std::endl;
     std::cout << "e = " << e << std::endl;
-    std::cout << "-------------Operations---------" << std::endl;
-    std::cout << "c > d: " << (c > d) << std::endl;
-    std::cout << "c < d: " << (c < d) << std::endl;
-    std::cout << "c >= d: " << (c >= d) << std::endl;
-    std::cout << "c <= d: " << (c <= d) << std::endl;
-    std::cout << "c == d: " << (c == d) << std::endl;
-    std::cout << "c != d: " << (c != d) << std::endl;
-    std::cout << "d > e: " << (d > e) << std::endl;
-    std::cout << "d < e: " << (d < e) << std::endl;
-    std::cout << "d >= e: " << (d >= e) << std::endl;
-    std::cout << "d <= e: " << (d <= e) << std::endl;
-    std::cout << "d == e: " << (d == e) << std::endl;
-    std::cout << "d != e: " << (d != e) << std::endl;
+	printSectionTitle("Operations");
+	std::cout << "c > d: " << returnWordForBool(c > d) << std::endl;
+    std::cout << "c < d: " << returnWordForBool(c < d) << std::endl;
+    std::cout << "c >= d: " << returnWordForBool(c >= d) << std::endl;
+    std::cout << "c <= d: " << returnWordForBool(c <= d) << std::endl;
+    std::cout << "c == d: " << returnWordForBool(c == d) << std::endl;
+    std::cout << "c != d: " << returnWordForBool(c != d) << std::endl;
+    std::cout << "d > e: " << returnWordForBool(d > e) << std::endl;
+    std::cout << "d < e: " << returnWordForBool(d < e) << std::endl;
+    std::cout << "d >= e: " << returnWordForBool(d >= e) << std::endl;
+    std::cout << "d <= e: " << returnWordForBool(d <= e) << std::endl;
+    std::cout << "d == e: " << returnWordForBool(d == e) << std::endl;
+    std::cout << "d != e: " << returnWordForBool(d != e) << std::endl;
 
-    std::cout << "-------------Values-------------" << std::endl;   
+    printSectionTitle("Values");  
     std::cout << "c = " << c << std::endl;
-    std::cout << "-------------Operations---------" << std::endl;
+    printSectionTitle("Operations");
     std::cout << "c++ = " << c++ << std::endl;
     std::cout << "c = " << c << std::endl;
     std::cout << "++c = " << ++c << std::endl;
@@ -76,9 +101,9 @@ int main(void) {
     std::cout << "--c = " << --c << std::endl;
     std::cout << "c = " << c << std::endl;  
 
-    std::cout << "-------------Values-------------" << std::endl;   
+    printSectionTitle("Values");  
     std::cout << "d = " << d << std::endl;
-    std::cout << "-------------Operations---------" << std::endl;
+    printSectionTitle("Operations");
     std::cout << "d++ = " << d++ << std::endl;
     std::cout << "d = " << d << std::endl;
     std::cout << "++d = " << ++d << std::endl;
@@ -88,30 +113,39 @@ int main(void) {
     std::cout << "--d = " << --d << std::endl;
     std::cout << "d = " << d << std::endl; 
 
-    std::cout << "-------------Values-------------" << std::endl;   
+    printSectionTitle("Values"); 
     std::cout << "c = " << c << std::endl;
     std::cout << "d = " << d << std::endl;
-    std::cout << "-------------Operations---------" << std::endl;
+    printSectionTitle("Operations");
     std::cout << "min(c, d) = " << Fixed::min(c, d) << std::endl;
     std::cout << "max(c, d) = " << Fixed::max(c, d) << std::endl;   
 
     Fixed const f(1.5f);
     Fixed const g(2);
-    std::cout << "-------------Values-------------" << std::endl;   
+    printSectionTitle("Values");  
     std::cout << "f = " << f << std::endl;
     std::cout << "g = " << g << std::endl;
-    std::cout << "-------------Operations---------" << std::endl;
+    printSectionTitle("Operations");
     std::cout << "min(f, g) = " << Fixed::min(f, g) << std::endl;
     std::cout << "max(f, g) = " << Fixed::max(f, g) << std::endl;
 
-    // example to understand the problem with floating point numbers
-    // std::cout << "---------------------------------------------" << std::endl;
-    // std::cout << "Problem with floating point numbers (example)" << std::endl;
-    // std::cout << "---------------------------------------------" << std::endl;
-    // std::cout << std::setprecision(17);
+ 
+	// TO UNCOMMENT if want to see example to understand the problem with floating point numbers 
+	//+ TO UNCOMMENT <iomanip>
+	
+	// printTestTitle("Well-known example of a problem with floating point numbers");
+	// printSectionTitle("Using floaing point numbers");
+	// std::cout << std::setprecision(17);
     // std::cout << "0.1 + 0.2 = " << (0.1 + 0.2) << std::endl;
     // std::cout << "0.3 = " << 0.3 << std::endl;
-    // std::cout << "0.1 + 0.2 == 0.3: " << ((0.1 + 0.2) == 0.3) << std::endl;
+    // std::cout << "0.1 + 0.2 == 0.3: " << returnWordForBool((0.1 + 0.2) == 0.3) << std::endl;
+
+	// printSectionTitle("Using fixed point numbers class");
+	// std::cout << std::setprecision(17);
+    // std::cout << "0.1 + 0.2 = " << (Fixed(0.1f) + Fixed(0.2f)) << std::endl;
+    // std::cout << "0.3 = " << Fixed(0.3f) << std::endl;
+    // std::cout << "0.1 + 0.2 == 0.3: " << returnWordForBool(Fixed(0.1f) + Fixed(0.2f) == Fixed(0.3f)) << std::endl;
+
 
     return (0); 
 }

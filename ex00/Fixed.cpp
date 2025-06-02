@@ -6,7 +6,7 @@
 /*   By: iatopchu <iatopchu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:13:45 by iatopchu          #+#    #+#             */
-/*   Updated: 2025/05/28 17:13:46 by iatopchu         ###   ########.fr       */
+/*   Updated: 2025/06/02 14:49:09 by iatopchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ int Fixed::getRawBits(void) const {
 }
 
 void Fixed::setRawBits(int const raw) {
+	std::cout << "setRawBits function called with new value: " << raw << std::endl;
     _value = raw;
 }

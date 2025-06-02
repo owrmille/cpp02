@@ -6,7 +6,7 @@
 /*   By: iatopchu <iatopchu@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:14:05 by iatopchu          #+#    #+#             */
-/*   Updated: 2025/05/28 17:14:06 by iatopchu         ###   ########.fr       */
+/*   Updated: 2025/06/02 15:12:13 by iatopchu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 #include <iostream> 
 #include <cmath>
+
+#define CYAN "\033[96m"
+#define GREEN "\033[92m"
+#define YELLOW "\033[93m"
+#define RESET "\033[0m"
 
 class Fixed
 {
